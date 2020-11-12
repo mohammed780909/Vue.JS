@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first Vue.js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="mido">
+        <h1>Welcom To Vue.js Courses</h1>
+        <p>Welcom {{ " Mr. " + name }} We Are Happy To See You.</p>
+        <p>Your Age Is {{ age + 'Year'}} </p>
+        <p>Your Skills Is {{ skills[0] }} </p>
+        <p>You Are {{ inSubscribed ? 'Subscribed' : 'Not inSubscribed' }} </p>
+        <p>Your First Name is {{ completedTest[0].firstName  }} </p>
+        <p>Your  Second Result is {{ completedTest[1].testResult  }} </p>
+
+    </div>
+
+
+    <script src="vue.js"></script>
+    
+    <script>
+         var vm = new Vue({
+            el: '#mido',
+            data: {
+                name: 'Mohammed',
+                age: 42,
+                skills:['HTML' , 'CSS' , 'JS'],
+                inSubscribed: false,
+                completedTest:[
+                    {
+                        firstName: 'Mohemmed',
+                        testResult: '80%'
+                    },
+                    {
+                        secondName: 'Daniel',
+                        testResult: '90%'
+                    },
+                    {
+                        thirdName: 'David',
+                        testResult: '70%'
+                    }
+                ]
+            }
+        })
+    </script>
+    
+</body>
+</html>
