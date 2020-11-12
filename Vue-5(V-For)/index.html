@@ -8,13 +8,23 @@
 </head>
 <body>
     <div id="mido">
-        <h1>Welcom To Vue.js Courses</h1>
-        <p>Welcom {{ " Mr. " + name }} We Are Happy To See You.</p>
-        <p>Your Age Is {{ age + 'Year'}} </p>
-        <p>Your Skills Is {{ skills[0] }} </p>
-        <p>You Are {{ inSubscribed ? 'Subscribed' : 'Not inSubscribed' }} </p>
-        <p>Your First Name is {{ completedTest[0].testName  }} </p>
-        <p>Your  Second Result is {{ completedTest[1].testResult  }} </p>
+      <ul>
+          <li v-for="ski in skills">
+              {{ ski }}
+          </li>
+      </ul>
+      <ul>
+        <li v-for="(ski , index) in skills">
+            {{ index }} . {{ ski }}
+        </li>
+    </ul>
+    <ul>
+        <li v-for=" (test , index ) in completedTests">
+           {{ index }} . {{ test.testName }} = {{ test.testResult }}
+        </li>
+    </ul>
+
+
 
     </div>
 
@@ -29,7 +39,7 @@
                 age: 42,
                 skills:['HTML' , 'CSS' , 'JS'],
                 inSubscribed: false,
-                completedTest:[
+                completedTests:[
                     {
                         testName: 'Mohemmed',
                         testResult: '80%'
@@ -41,8 +51,13 @@
                     {
                         testName: 'David',
                         testResult: '70%'
-                    }
-                ]
+                    },
+                ],
+            },
+            methods: {
+                yourAgeInDays: function () {
+                    return 'your Age In Days Is: ' + this.age * 365 ;
+                },
             }
         })
     </script>

@@ -13,7 +13,7 @@
         <p>Your Age Is {{ age + 'Year'}} </p>
         <p>Your Skills Is {{ skills[0] }} </p>
         <p>You Are {{ inSubscribed ? 'Subscribed' : 'Not inSubscribed' }} </p>
-        <p>Your First Name is {{ completedTest[0].firstName  }} </p>
+        <p>Your First Name is {{ completedTest[0].testName  }} </p>
         <p>Your  Second Result is {{ completedTest[1].testResult  }} </p>
         <p> {{ yourAgeInDays() }} </p>
 
@@ -32,15 +32,15 @@
                 inSubscribed: false,
                 completedTest:[
                     {
-                        firstName: 'Mohemmed',
+                        testName: 'Mohemmed',
                         testResult: '80%'
                     },
                     {
-                        secondName: 'Daniel',
+                       testName: 'Daniel',
                         testResult: '90%'
                     },
                     {
-                        thirdName: 'David',
+                       testName: 'David',
                         testResult: '70%'
                     },
                 ],
