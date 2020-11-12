@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-Text,,,V-Html</title>
+</head>
+<body>
+
+    <div id="mido">
+        <h1>Welcom To Vue.js Courses</h1>
+        <p>Welcom {{ ' Mr ' + name }} We Are Happy To See You.</p>
+        <p v-text='name'></p>
+        <p v-html='title'></p>
+    </div>
+
+
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#mido',
+            data:{
+                name:'Mohammed',
+                title: '<div class="rank">Hello V-html</div>'
+            }
+        })
+    </script>
+    
+</body>
+</html>
