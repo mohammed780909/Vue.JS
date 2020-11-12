@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first Vue.js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="mido">
+        <h1>Welcom To Vue.js Courses</h1>
+        <p>Welcom {{ name.length > 5 ? name : "noooooo" }} We Are Happy To See You.</p>
+    </div>
+
+
+    <script src="vue.js"></script>
+    
+    <script>
+         var vm = new Vue({
+            el: '#mido',
+            data: {
+                name: 'Moh'
+            }
+        })
+    </script>
+    
+</body>
+</html>
