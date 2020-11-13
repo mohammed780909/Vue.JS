@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-Bind ,V-On</title>
+</head>
+<body>
+    <div id="mido">
+        <h1>Welcom To Vue.js Courses</h1>
+        <h3> V-Bind ,V-on</h3>
+        <!-- V-Bind  -->
+        <a :href="imghref">
+           <img :src="imgsrc" :alt="imgalt">
+        </a>
+
+        <!-- V-on  -->
+        <p> Counter Now : {{ counter }} </p>
+        <button @click="counter ++" >Increase Counter</button>
+    </div>
+
+
+    <script src="vue.js"></script>
+    
+    <script>
+         var vm = new Vue({
+            el: '#mido',
+            data: {
+                name: 'Mohammed',
+                imgsrc:'jag (kopia).jpeg',
+                imgalt:'Jag',
+                imghref:'https://m.kooora.com',
+                counter:0,
+            }
+        })
+    </script>
+    
+</body>
+</html>
