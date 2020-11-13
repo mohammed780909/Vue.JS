@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components</title>
+</head>
+<body>
+    <div id="mido">
+        <h1>Welcom To Vue.js Courses</h1>
+        <p> {{ name }} </p>
+        <p> {{ name }} Clicked Here<button><app-count></app-count></button> Time</p>
+        <app-count></app-count>
+        <app-count></app-count>
+        <app-count></app-count>
+        <app-count></app-count>
+        <app-count></app-count>
+    </div>
+
+    <div></div>
+   
+
+
+    <script src="vue.js"></script>
+
+    
+    <script>
+        Vue.component('app-count' ,{
+            data: function () {
+                return {
+                    name: 'Daniel',
+                    count:  0 
+                }
+            },
+            template: '<p @click="count++"> {{ count }} </p>'
+        })
+
+
+
+         var vm = new Vue({
+            el: '#mido',
+            data: {
+                name: 'Mohammed'
+            },
+        })
+    </script>
+    
+</body>
+</html>

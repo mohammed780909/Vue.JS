@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components</title>
+</head>
+<body>
+    <div id="mido">
+        <h1>Welcom To Vue.js Courses</h1>
+        <p> {{ name }} </p>
+        <app-article v-for="post in posts" :id="post.id" :auther="post.auther"></app-article>
+    </div>
+
+    <div></div>
+   
+
+
+    <script src="vue.js"></script>
+
+    
+    <script>
+        Vue.component('app-article' ,{
+            data: function () {
+                return {
+                    name: 'Daniel',
+                    count:  0 
+                }
+            },
+            props: [ 'id' , 'auther' ],
+            template: '<p > {{ id }} && {{ auther }}  </p>'
+        })
+
+
+
+         var vm = new Vue({
+            el: '#mido',
+            data: {
+                
+                abc: 'Google',
+                link:'https://www.google.com',
+                posts:[
+                    { id: 1 ,auther: 'Mohammed' ,title: 'Article Number One'},
+                    { id: 2 ,auther: 'Noor' ,title: 'Article Number Tow'},
+                    { id: 3 ,auther: 'Daniel' ,title: 'Article Number Three'},
+                    { id: 4 ,auther: 'David' ,title: 'Article Number Four'},
+
+                ]
+            },
+        })
+    </script>
+    
+</body>
+</html>
