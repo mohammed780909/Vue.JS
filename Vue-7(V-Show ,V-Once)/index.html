@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-Show , V-Once</title>
+</head>
+<body>
+    <div id="mido">
+        <h1>Welcom To Vue.js Courses</h1>
+        <p v-show="name"> {{"Name : " + name}} </p>   
+    </div>
+
+
+    <script src="vue.js"></script>
+    
+    <script>
+         var vm = new Vue({
+            el: '#mido',
+            data: {
+                name: 'Mohammed',
+                age: '42',
+            },
+        })
+    </script>
+    
+</body>
+</html>
