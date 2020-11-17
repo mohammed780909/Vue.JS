@@ -1,0 +1,53 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computed</title>
+</head>
+<body>
+   
+    <div id="mido">
+        <h1>Welcom To Vue.js Courses</h1>
+        <label >Search for Programing Languages:</label> 
+        <input type="text" v-model="findLanguage" >
+        <ul>
+            <li v-for="lang in filterLanguages" >
+               {{ lang }} 
+            </li>
+        </ul>
+    </div>
+
+
+   
+    <script src="vue.js"></script>
+    
+    <script>
+         var vm = new Vue({
+            el: '#mido',
+            data: {              
+                findLanguage: '',
+                languages: [ 
+                    'HTML' ,
+                    'CSS' ,
+                    'SASS' ,
+                    'JAVASCRIPT' ,
+                    'PHP' ,
+                    'MYSQL' ,
+                    'PYTHON' ,
+                    'C#' ,
+                    'JAVA' ,
+                ],
+            },
+            computed: {
+                filterLanguages: function () {
+                    var filtering = new RegExp(this .findLanguage, 'i');
+                    return this.languages.filter(function (el) {
+                        return el.match(filtering);
+                    })
+
+                }
+            },
+        })
+    </script>
+    
+</body>
+</html>

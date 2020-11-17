@@ -1,0 +1,44 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computed</title>
+</head>
+<body>
+   
+    <div id="mido">
+        <h1>Welcom To Vue.js Courses</h1>
+        <label >Write Your Username:</label> 
+        <input type="text" v-model="username" >
+        <p> {{ validateUsername }} </p>
+        
+    </div>
+
+
+   
+    <script src="vue.js"></script>
+    
+    <script>
+         var vm = new Vue({
+            el: '#mido',
+            data: {    
+                username: '' ,
+                
+            },
+            computed: {
+                validateUsername: function () {
+                    if (!this.username) {
+                        return 'User Name IS Empty' ;
+                    } else if (this.username.length < 9) {
+                        return ' Username is too short';
+                    } else if (! isNaN(this.username)){
+                        return ' Username Cant be Numbers Only';
+                    } else {
+                        return ' hello ' + this.username + ' Everything is Good ';
+                    }
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>
